@@ -7,6 +7,7 @@
 // Changes
 
 #import "ViewController.h"
+#import "ServerConnection.h"
 
 @interface ViewController ()
 
@@ -16,6 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.parameters setValue:@"197" forKey:@"userid"];
+    [self.connection startAPIWithParameters:self.parameters withURL:@"iphone/getPrivacy" WithTypePOST:YES withloader:YES withCallerObj:self];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
